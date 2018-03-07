@@ -26,7 +26,7 @@ int main()
       
       if (d != 0) {
       		x = (c1*b2 - b1*c2)/d;
-      		y = (a1*c2- a2*c1);
+      		y = (a1*c2- a2*c1)/d;
       		printf("\n\nHe co nghiem duy nhat voi: \nx= %.2f ; y = %.2f",x,y);   		
 	  		} 
 	  else if (d == 0) {

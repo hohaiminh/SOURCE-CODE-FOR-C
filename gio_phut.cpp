@@ -14,7 +14,19 @@ int main(){
 	scanf("%d", &gio);
 	printf("\nNhap vao so phut: ");	
 	scanf("%d", &phut);
-	 
+	if(phut <= 59){
+		printf("\n%d gio va %d phut",gio,phut);
+	} else if(phut == 60){
+		gio++;
+		phut = 0;
+	}	else{
+		gio++;
+		phut =  phut-gio*60;
+	}
+	
+		
+		printf("\n%d gio va %d phut",gio,phut);
+	
 	tong = gio*60 + phut;
 	printf("\nTong so phut: %d", tong);
 	return 0;

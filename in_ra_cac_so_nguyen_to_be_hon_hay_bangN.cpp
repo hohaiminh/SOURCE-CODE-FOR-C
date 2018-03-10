@@ -9,7 +9,7 @@ int main()
     printf("Nhap vao so nguyen duong N: ");;
     scanf("%d",&n);
     printf("\n Cac so nguyen to be hon hoac bang N la: ");
-    for(p=2;p<=n;p++){
+    for(p=2;p<=n;p++){	//Tao vong lap "for" voi so nguyen to nho nhat la 2
     	dem = 0;
     	for(i=1;i<=p;i++){
     		if(p%i==0)

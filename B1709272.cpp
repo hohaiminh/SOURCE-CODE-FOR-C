@@ -35,17 +35,15 @@ int main(){
 	rong_min = rong[1];
 	min = S[1];
 	for(dem=1; dem<=n;dem++){
-		if(	min>S[dem]){
+		if(min>S[dem]){
 			min = S[dem];
 			dai_min = dai[dem];
 			rong_min = rong[dem];
 		}
 	}
 	
-	
 	printf("\n\n Dien tich HCN lon nhat la: %.3f",max );
 	printf("\n\n Chieu dai va chieu rong cua HCN lon nhat la: %.2f va %.2f", dai_max,rong_max);
-	
 	printf("\n\n Dien tich HCN nho nhat la: %.3f", min);
 	printf("\n\n Chieu dai va rong cua HCN be nhat la: %.2f va %.2f", dai_min,rong_min);
 	getch();

@@ -1,4 +1,5 @@
 // Chuong trinh nhap vao N dien tich HCN, in ra chieu dai va chieu rong cua HCN co S lon nhat
+//Nhap vao N dien tich HCN, tim chieu dai va rong cua HCN co S be nhat 
 
 #include <stdio.h>
 #include <conio.h>

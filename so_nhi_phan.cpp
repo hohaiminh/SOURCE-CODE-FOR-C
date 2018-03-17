@@ -1,28 +1,36 @@
-#include <stdio.h>
-#include <conio.h>
+#include<stdio.h>  
+#include<conio.h>  
 
-// Doi 1 so nguyen ra so nhi phan, kiem tra xem do la so LE hay CHAN
+// Chuong trinh chuyen mot so nguyen sang he nhi phan
+
+// Tim xem trong he nhi phan co bao nhiu bit 1
+
+// Neu so bit 1 = chan thi in ra CHAN, nguoc lai in ra LE
 
 
-int main(){
-	unsigned int n,i=1,so_du,so_nhi_phan=0;
-	printf("Nhap vao so nguyen dunog N: ");
+main()  {
+	int n,i,a[1000],dem=0;
+	printf("Nhap vao mot so nguyen N: ");
 	scanf("%d", &n);
-	while (n!=0)
-    {
-        so_du = n%2;
-        n /= 2;
-        so_nhi_phan = so_nhi_phan + so_du*i;
-        i = i*10;
-    }
-    printf("\n Doi ra so nhi phan la: %d",so_nhi_phan );
-    if(so_nhi_phan%2==0){
-    	printf("\n\n\nCHAN");
+	while(n>0){
+		a[i] = n%2;
+		n = n/2;
+		i++;
 	}
-	else
-		printf("\n\n\nLE");
+	printf("\n Gia tri cua N khi doi sang he nhi phan la: ");
+	for(i = i-1; i>=0;i--){
+		printf("%d", a[i]);
+		if(a[i]==1)
+			dem++;
 		
-	getch();	
+	}
+	printf("\n So bit 1 co trong he nhi phan la: %d", dem);
+	if(dem%2==0)
+		printf("\n\n\t CHAN");
+	else
+		printf("\n\n\t LE");
+	getch();
 	return 0;
-    
+		
+	
 }

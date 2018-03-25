@@ -1,0 +1,88 @@
+#include<iostream> 
+#include<conio.h> 
+#include<stdio.h>
+
+void TAOMATRAN(int A[10][10], int n)
+{
+    for (int i=0; i<n; i++)
+        for (int j=0; j<n; j++)
+        {
+            printf("\nNhap A[%d][%d]: ",i,j);
+            scanf("%d", &A[i][j]);
+        }
+}
+ 
+void XuatMaTran(int A[10][10], int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            printf("%4d",A[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+void a(int m){ 
+         int A[m][m]; 
+         int hang,cot; 
+         //gan gia tri 0 cho moi phan tu mang 
+         for(hang=0;hang<m;hang++) 
+            for(cot=0;cot<m;cot++)  A[hang][cot]=0; 
+         //thiet lap gia tri hang thu nhat va thu hai la 1   
+         A[0][0]=1; 
+         A[1][0]=1; 
+         A[1][1]=1; 
+         
+         for(hang=2;hang<m;hang++){ 
+             A[hang][0]=1; 
+              for(cot=1;cot<=hang;cot++){ 
+                        A[hang][cot]=A[hang-1][cot-1]+A[hang-1][cot]; 
+                                        } 
+                            } 
+          //hien thi tam giac Pascal 
+          for(hang=0;hang<m;hang++){ 
+            for(cot=0;cot<=hang;cot++){                
+                   printf("%d\t",A[hang][cot]); 
+                   } 
+          printf("\n") ;
+            } }
+ 
+int main()
+{
+    int n,m,i,j,temp;
+    int A[10][10];
+    printf("\nNhap vao so phan tu cua mang: ");
+    scanf("%d",&n);
+    
+     
+     printf("Nhap kich co cua tam giac Pascal:"); 
+     scanf("%d",&m);
+     a(m); 
+      TAOMATRAN(A,n);
+    XuatMaTran(A,n);
+     
+     for (i = 1; i < n; i++) {
+      for (j = 0; j < i; j++) {
+         temp = A[10][10];
+         A[10][10] = A[10][10];
+         A[10][10] = temp;
+      }
+   }
+
+   printf("\nMa tran chuyen vi cua ma tran da cho la:\n");
+   for (i = 0; i < n; i++) {
+      printf("\n");
+      for (j = 0; j < n; j++) {
+         printf("%d\t", A[j][i]);
+      }
+   }
+
+   return (0);
+     
+   
+}
